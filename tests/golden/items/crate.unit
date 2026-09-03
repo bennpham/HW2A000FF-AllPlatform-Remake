@@ -1,0 +1,21 @@
+<unit slot="doodad">
+
+  <behavior class="Breakable">
+    <string name="break-sound">hwport/sound/enemies.sbnk:crate-break</string>
+    <string name="loot">hwport/loot/doodad.sval:items/crate.unit</string>
+  </behavior>
+
+  <scenes start="default">
+    <scene name="hwport_shared">
+    </scene>
+
+    <scene name="default">
+	  <scene src="hwport_shared" />
+      <sprite origin="0 0" looping="true" texture="hwport/items/crate.png" material="hwport/system/hammerwatch.mats:proj-prop">
+        <frame>0 0 16 16</frame>
+      </sprite>
+    </scene>
+
+  </scenes>
+
+</unit>

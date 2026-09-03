@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<particles>
+  <sprite name="blood"><texture>gore/gib.png</texture><origin>0 0</origin><frame>0 0 8 8</frame></sprite>
+</particles>

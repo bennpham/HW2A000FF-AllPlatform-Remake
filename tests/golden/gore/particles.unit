@@ -1,0 +1,9 @@
+<unit slot="doodad" netsync="none">
+  <scenes>
+    <scene name="blood" random-start="true">
+      <sprite origin="0 0" looping="true" texture="hwport/gore/gib.png" material="hwport/system/hammerwatch.mats:gib">
+        <frame>0 0 8 8</frame>
+      </sprite>
+    </scene>
+  </scenes>
+</unit>

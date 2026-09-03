@@ -1,0 +1,53 @@
+<unit netsync="none">
+
+  <behavior class="RayProjectile">
+    <string name="anim">idle 4</string>
+    <float name="speed">2</float>
+    <int name="ttl">1500</int>
+    <array name="effects">
+      <dict>
+        <string name="class">Damage</string>
+        <int name="dmg">6</int>
+        <string name="dmg-type">pierce</string>
+      </dict>
+    </array>
+  </behavior>
+
+  <scenes start="idle-2">
+    <scene name="hwport_shared">
+      <collision static="false">
+        <circle offset="0 0" radius="4" projectile="true" />
+      </collision>
+    </scene>
+
+    <scene name="idle-2">
+	  <scene src="hwport_shared" />
+      <sprite origin="0 0" looping="true" texture="hwport/projectiles/bolt.png" material="hwport/system/hammerwatch.mats:projectile">
+        <frame>0 0 8 8</frame>
+      </sprite>
+    </scene>
+
+    <scene name="idle-3">
+	  <scene src="hwport_shared" />
+      <sprite origin="0 0" looping="true" texture="hwport/projectiles/bolt.png" material="hwport/system/hammerwatch.mats:projectile">
+        <frame>8 0 8 8</frame>
+      </sprite>
+    </scene>
+
+    <scene name="idle-0">
+	  <scene src="hwport_shared" />
+      <sprite origin="0 0" looping="true" texture="hwport/projectiles/bolt.png" material="hwport/system/hammerwatch.mats:projectile">
+        <frame>16 0 8 8</frame>
+      </sprite>
+    </scene>
+
+    <scene name="idle-1">
+	  <scene src="hwport_shared" />
+      <sprite origin="0 0" looping="true" texture="hwport/projectiles/bolt.png" material="hwport/system/hammerwatch.mats:projectile">
+        <frame>24 0 8 8</frame>
+      </sprite>
+    </scene>
+
+  </scenes>
+
+</unit>

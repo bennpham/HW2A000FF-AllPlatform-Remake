@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item behavior="money">
+  <behavior><dictionary>
+    <entry name="amount"><int>10</int></entry>
+    <entry name="pickup-snd"><string>sound/enemies.xml:coin</string></entry>
+    <entry name="pickup-text"><string>ig.gold</string></entry>
+  </dictionary></behavior>
+  <sprite name="default"><texture>items/coin.png</texture><origin>0 0</origin><frame>0 0 16 16</frame></sprite>
+</item>

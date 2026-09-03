@@ -1,0 +1,9 @@
+<dict>
+  <array name="hwport/actors/gnaar.unit">
+    <vec2>0 0</vec2> <!-- Offset -->
+    <vec2>0 0</vec2> <!-- Spread -->
+    <array>
+      <int>50</int><string>hwport/items/coin.unit</string>
+    </array>
+  </array>
+</dict>

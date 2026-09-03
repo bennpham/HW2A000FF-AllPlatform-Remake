@@ -1,0 +1,72 @@
+<unit netsync="position" slot="actor">
+
+  <behavior class="CompositeActorBehavior">
+    <int name="hp">120</int>
+    <int name="aggro-range">112</int>
+    <string name="death-snd">hwport/sound/enemies.sbnk:gnaar-die</string>
+    <string name="gore">hwport/gore/gnaar_gore.sval</string>
+    <string name="hit-fx">hwport/fx/effects_hit.effect</string>
+    <string name="loot">hwport/loot/actor.sval:actors/gnaar.unit</string>
+
+    <dict name="movement">
+      <string name="class">MeleeMovement</string>
+      <string name="anim-idle">idle 8</string>
+      <string name="anim-walk">walk 8</string>
+
+      <float name="speed">2.7</float>
+    </dict>
+
+    <array name="skills">
+      <dict>
+        <string name="class">EnemyMeleeStrike</string>
+
+        <string name="anim">attack 8</string>
+        <string name="snd">sound/enemies.sbnk:gnaar-melee</string>
+
+        <int name="cooldown">0</int>
+        <int name="range">20</int>
+        <int name="castpoint">240</int>
+        <int name="arc">90</int>
+        <dict name="effect">
+          <string name="class">Damage</string>
+          <int name="dmg">8</int>
+          <string name="dmg-type">pierce</string>
+        </dict>
+      </dict>
+    </array>
+  </behavior>
+
+  <scenes start="idle-0 idle-1 idle-2 idle-3 idle-4 idle-5 idle-6 idle-7">
+    <scene name="hwport_shared">
+      <collision static="false">
+        <circle offset="0 0" aim-through="true" radius="10" />
+        <circle offset="0 -15" sensor="true" shoot-through="false" aim-through="true" radius="10" />
+      </collision>
+    </scene>
+
+    <scene name="idle-0">
+	  <scene src="hwport_shared" />
+      <sprite origin="0 0" looping="true" texture="hwport/actors/gnaar.png" material="hwport/system/hammerwatch.mats:actor">
+        <frame time="150">0 0 32 32</frame>
+        <frame time="150">32 0 32 32</frame>
+      </sprite>
+    </scene>
+
+    <scene name="attack-0">
+	  <scene src="hwport_shared" />
+      <sprite origin="0 0" looping="true" texture="hwport/actors/gnaar.png" material="hwport/system/hammerwatch.mats:actor">
+        <frame time="120">0 0 32 32</frame>
+        <frame time="120">32 0 32 32</frame>
+      </sprite>
+    </scene>
+
+    <scene name="idle-2">
+	  <scene src="hwport_shared" />
+      <sprite origin="0 0" looping="true" texture="hwport/actors/gnaar.png" material="hwport/system/hammerwatch.mats:actor">
+        <frame>0 0 32 32</frame>
+      </sprite>
+    </scene>
+
+  </scenes>
+
+</unit>

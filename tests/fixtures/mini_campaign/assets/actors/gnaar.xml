@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor behavior="melee" collision="10">
+  <!-- A basic melee enemy. -->
+  <behavior>
+    <dictionary>
+      <entry name="hp"><int>120</int></entry>
+      <entry name="speed"><float>0.9</float></entry>
+      <entry name="dmg"><int>8</int></entry>
+      <entry name="aggro-range"><float>7</float></entry>
+      <entry name="death-snd"><string>sound/enemies.xml:gnaar-die</string></entry>
+      <entry name="gib"><string>gore/gnaar_gore.xml</string></entry>
+      <entry name="hit-effect"><string>fx/effects.xml:hit</string></entry>
+      <entry name="hp-bar"><bool>true</bool></entry>
+      <entry name="loot"><int>50</int><string>items/coin.xml</string></entry>
+    </dictionary>
+  </behavior>
+  <sprite name="east"><texture>actors/gnaar.png</texture><origin>0 0</origin>
+    <frame time="150">0 0 32 32</frame><frame time="150">32 0 32 32</frame></sprite>
+  <sprite name="east-attack"><texture>actors/gnaar.png</texture><origin>0 0</origin>
+    <frame time="120">0 0 32 32</frame><frame time="120">32 0 32 32</frame></sprite>
+  <sprite name="south"><texture>actors/gnaar.png</texture><origin>0 0</origin>
+    <frame>0 0 32 32</frame></sprite>
+</actor>

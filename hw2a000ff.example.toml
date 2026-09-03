@@ -1,0 +1,46 @@
+# hw2a000ff configuration.
+# Relative paths resolve against this file's directory.
+
+[paths]
+# Assets to convert. For a scenario this is the scenario's own assets folder.
+source = "Hammerwatch/assets"
+# Base game assets, used to fill in anything the scenario does not override.
+# Leave unset when converting the base game itself.
+# fallback = "Hammerwatch/assets"
+# Campaign levels index. Levels are read from the "levels" folder beside it.
+# levels_xml = "Hammerwatch/assets_campaign/campaign/levels.xml"
+output = "out"
+# Prepended to every asset reference written into the output.
+prefix = ""
+
+[convert]
+actors = true
+projectiles = true
+doodads = true
+tilesets = true
+items = true
+strings = true
+speech_styles = true
+fonts = true
+loot = true
+levels = true
+sounds = true
+
+[scales]
+# 1.0 is the original tool's 100% slider position.
+health = 1.0
+range = 1.0
+damage = 1.0
+speed = 1.0
+
+[sprites]
+modify_wall_collision = false
+
+[strings]
+key_prefix = "hwport."
+
+[options]
+# Refuse to run unless Hammerwatch.exe sits beside the assets folder.
+require_game_install = false
+# "lf" or "crlf"; crlf reproduces the original Windows tool's output bytes.
+line_endings = "lf"

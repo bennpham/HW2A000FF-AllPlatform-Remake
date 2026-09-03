@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soundbank>
+  <sound name="gnaar-die" volume="0.8" pitch-var="0.1"><source res="sound/gnaar_die.wav" /></sound>
+  <sound name="coin" volume="1"><source res="sound/gnaar_die.wav" /></sound>
+  <sound name="crate-break"><source res="sound/gnaar_die.wav" /></sound>
+  <music name="theme" volume="0.5"><source res="sound/theme.ogg" /></music>
+</soundbank>

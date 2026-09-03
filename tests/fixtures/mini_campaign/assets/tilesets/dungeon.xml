@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tileset level="1000">
+  <sprite><texture>tilesets/dungeon.png</texture><frame>0 0 16 16</frame></sprite>
+  <sprite><texture>tilesets/dungeon.png</texture><frame>16 0 16 16</frame></sprite>
+  <sprite><texture>tilesets/dungeon.png</texture><frame>32 0 32 32</frame></sprite>
+  <borders>
+    <sprite name="n"><texture>tilesets/dungeon.png</texture><frame>0 16 16 16</frame></sprite>
+    <sprite name="s"><texture>tilesets/dungeon.png</texture><frame>16 16 16 16</frame></sprite>
+  </borders>
+</tileset>

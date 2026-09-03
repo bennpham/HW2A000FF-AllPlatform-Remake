@@ -1,0 +1,64 @@
+<unit slot="doodad" layer="1">
+
+  <scenes start="default">
+    <scene name="hwport_shared">
+      <collision static="true">
+        <polygon>
+          <point>-4 -4</point>
+          <point>4 -4</point>
+          <point>4 4</point>
+          <point>-4 4</point>
+        </polygon>
+      </collision>
+      <shadow darkness="1.0">
+        <polygon>
+          <point>-4 -2</point>
+          <point>4 -2</point>
+          <point>4 2</point>
+          <point>-4 2</point>
+        </polygon>
+      </shadow>
+      <light pos="0 -8">
+        <sprite texture="hwport/system/light_L.png">
+          <frame>0 0 128 128</frame>
+        </sprite>
+        <length value="50" />
+        <looping value="true" />
+        <cast-shadows value="false" />
+        <shadow-cast-pos value="0 0" />
+        <shadow-cast-pos-jitter value="0 0 0 0" />
+        <sizes>
+          <size value="96" />
+        </sizes>
+        <colors>
+          <color value="255 255 57 0 255" />
+        </colors>
+      </light>
+      <light pos="0 -8">
+        <sprite texture="hwport/system/light_L.png">
+          <frame>0 0 128 128</frame>
+        </sprite>
+        <length value="50" />
+        <looping value="true" />
+        <cast-shadows value="false" />
+        <shadow-cast-pos value="0 0" />
+        <shadow-cast-pos-jitter value="0 0 0 0" />
+        <sizes>
+          <size value="48" />
+        </sizes>
+        <colors>
+          <color value="255 107 10 25 107" />
+        </colors>
+      </light>
+    </scene>
+
+    <scene name="default">
+	  <scene src="hwport_shared" />
+      <sprite origin="0 16" looping="true" texture="hwport/doodads/torch.png" material="hwport/system/hammerwatch.mats:doodad">
+        <frame time="100">0 0 16 32</frame>
+      </sprite>
+    </scene>
+
+  </scenes>
+
+</unit>

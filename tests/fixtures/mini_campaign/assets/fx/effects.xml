@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<effects>
+  <sprite name="hit"><texture>fx/spark.png</texture><origin>0 0</origin>
+    <frame time="50">0 0 16 16</frame></sprite>
+</effects>

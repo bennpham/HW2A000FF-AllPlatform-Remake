@@ -1,0 +1,9 @@
+<tileset texture="hwport/tilesets/dungeon.png" layer="-100" size="16" material="hwport/system/hammerwatch.mats:floor">
+  <tile>0 0 16 16</tile>
+  <tile>16 0 16 16</tile>
+  <tile>32 0 16 16</tile> <!-- 32 32 -->
+  <borders>
+    <tile name="n">0 16 16 16</tile>
+    <tile name="s">16 16 16 16</tile>
+  </borders>
+</tileset>

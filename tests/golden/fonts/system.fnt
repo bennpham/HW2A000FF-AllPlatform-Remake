@@ -1,0 +1,6 @@
+info face="System" size=12 bold=0
+common lineHeight=14 base=11 scaleW=128 scaleH=128 pages=1
+page id=0 file="hwport/fonts/system_0.png"
+chars count=2
+char id=65 x=0 y=0 width=8 height=10 xoffset=0 yoffset=2 xadvance=9
+char id=66 x=8 y=0 width=8 height=10 xoffset=0 yoffset=2 xadvance=9

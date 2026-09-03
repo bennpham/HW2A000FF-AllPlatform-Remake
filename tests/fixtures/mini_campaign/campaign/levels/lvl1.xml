@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<level>
+  <dictionary name="tilemap">
+    <array name="chunks">
+      <dictionary>
+        <int name="x">0</int>
+        <int name="y">0</int>
+        <array name="datasets">
+          <dictionary>
+            <string name="tileset">tilesets/dungeon.xml</string>
+            <int-arr name="data-t">1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</int-arr>
+          </dictionary>
+        </array>
+      </dictionary>
+    </array>
+  </dictionary>
+
+  <dictionary name="doodads">
+    <array name="doodads">
+      <dictionary>
+        <int name="id">10</int>
+        <string name="type">doodads/torch.xml</string>
+        <vec2 name="pos">5 6</vec2>
+        <int name="layer">21</int>
+      </dictionary>
+    </array>
+  </dictionary>
+
+  <dictionary name="actors">
+    <array name="actors/gnaar.xml">
+      <array><int>20</int><vec2>8 9</vec2></array>
+      <array><int>21</int><vec2>12 9</vec2></array>
+    </array>
+  </dictionary>
+
+  <dictionary name="items">
+    <array name="items/coin.xml">
+      <array><int>30</int><vec2>10 10</vec2></array>
+    </array>
+  </dictionary>
+
+  <dictionary name="lighting">
+    <array name="lights">
+      <dictionary>
+        <int name="id">40</int>
+        <vec2 name="pos">5 6</vec2>
+        <int-arr name="mulColor1">255 200 150</int-arr>
+        <float name="mulRange">6</float>
+      </dictionary>
+    </array>
+    <int-arr name="ambient-color">40 45 60</int-arr>
+    <int-arr name="shadow-color">255 255 255 255</int-arr>
+  </dictionary>
+
+  <dictionary name="scripting">
+    <array name="nodes">
+      <dictionary>
+        <string name="type">GlobalEventTrigger</string>
+        <int name="id">100</int>
+        <bool name="enabled">true</bool>
+        <int name="trigger-times">-1</int>
+        <vec2 name="pos">1 1</vec2>
+        <string name="parameters">LevelLoaded</string>
+        <int-arr name="connections">101</int-arr>
+        <int-arr name="connection-delays">250</int-arr>
+      </dictionary>
+      <dictionary>
+        <string name="type">PlaySound</string>
+        <int name="id">101</int>
+        <bool name="enabled">true</bool>
+        <int name="trigger-times">1</int>
+        <vec2 name="pos">2 1</vec2>
+        <dictionary name="parameters">
+          <string name="sound">sound/enemies.xml:coin</string>
+          <bool name="loop">false</bool>
+          <bool name="play3d">false</bool>
+        </dictionary>
+      </dictionary>
+      <dictionary>
+        <string name="type">RectangleShape</string>
+        <int name="id">102</int>
+        <bool name="enabled">true</bool>
+        <int name="trigger-times">-1</int>
+        <vec2 name="pos">10 10</vec2>
+        <dictionary name="parameters">
+          <float name="w">4</float>
+          <float name="h">3</float>
+        </dictionary>
+      </dictionary>
+      <dictionary>
+        <string name="type">AreaTrigger</string>
+        <int name="id">103</int>
+        <bool name="enabled">true</bool>
+        <int name="trigger-times">-1</int>
+        <vec2 name="pos">10 12</vec2>
+        <dictionary name="parameters">
+          <int name="event">0</int>
+          <int name="types">1</int>
+          <dictionary name="shape"><int-arr name="static">102</int-arr></dictionary>
+        </dictionary>
+      </dictionary>
+      <dictionary>
+        <string name="type">LevelExit</string>
+        <int name="id">104</int>
+        <bool name="enabled">true</bool>
+        <int name="trigger-times">-1</int>
+        <vec2 name="pos">14 14</vec2>
+        <dictionary name="parameters">
+          <string name="level">2</string>
+          <string name="start id">0</string>
+        </dictionary>
+      </dictionary>
+      <dictionary>
+        <string name="type">SomeFutureNode</string>
+        <int name="id">105</int>
+        <bool name="enabled">true</bool>
+        <int name="trigger-times">-1</int>
+        <vec2 name="pos">16 14</vec2>
+      </dictionary>
+    </array>
+  </dictionary>
+</level>

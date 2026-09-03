@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doodad defaultlayer="21">
+  <light>
+    <origin>0 -8</origin>
+    <texture>system/light_L.png</texture>
+    <range>96</range><range>48</range>
+    <color1>255 180 90</color1><color1>255 120 40</color1>
+  </light>
+  <collision static="true" shoot-through="false">
+    <polygon collision="true"><point>-4 -4</point><point>4 -4</point><point>4 4</point><point>-4 4</point></polygon>
+  </collision>
+  <polygon shadow="true"><point>-4 -2</point><point>4 -2</point><point>4 2</point><point>-4 2</point></polygon>
+  <sprite name="default"><texture>doodads/torch.png</texture><origin>0 16</origin>
+    <frame time="100">0 0 16 32</frame></sprite>
+</doodad>

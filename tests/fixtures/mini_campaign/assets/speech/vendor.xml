@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<speech font="fonts/system.xml" text-color="255 240 200">
+  <sprite name="bubble"><texture>speech/bubble.png</texture>
+    <frame time="80">0 0 32 32</frame><frame>0 0 32 32</frame></sprite>
+</speech>

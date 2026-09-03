@@ -1,0 +1,33 @@
+<unit slot="item">
+
+  <behavior class="Pickup">
+    <bool name="bounce">false</bool>
+    <string name="sound">hwport/sound/enemies.sbnk:coin</string>
+    <bool name="global">true</bool>
+    <array name="effects">
+      <dict>
+        <string name="class">GiveGold</string>
+        <int name="amount">10</int>
+      </dict>
+      <dict>
+        <string name="class">ShowFloatingText</string>
+        <string name="text">.hwport.ig.gold</string>
+        <vec2 name="offset">0 -18</vec2>
+      </dict>
+    </array>
+  </behavior>
+
+  <scenes start="default">
+    <scene name="hwport_shared">
+    </scene>
+
+    <scene name="default">
+	  <scene src="hwport_shared" />
+      <sprite origin="0 0" looping="true" texture="hwport/items/coin.png" material="hwport/system/hammerwatch.mats:item-money">
+        <frame>0 0 16 16</frame>
+      </sprite>
+    </scene>
+
+  </scenes>
+
+</unit>

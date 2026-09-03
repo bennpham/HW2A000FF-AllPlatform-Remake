@@ -1,0 +1,12 @@
+<dict>
+  <string name="font">hwport/fonts/system.fnt</string>
+  <vec3 name="color">1 0.9411765 0.7843137</vec3>
+
+  <dict name="sprites">
+    <array name="bubble">
+      <string>hwport/speech/bubble.png</string>
+      <int>80</int><vec4>0 0 32 32</vec4>
+      <int>100</int><vec4>0 0 32 32</vec4>
+    </array>
+  </dict>
+</dict>

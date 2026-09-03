@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campaign name="Mini">
+  <level id="1" res="levels/lvl1.xml" />
+  <level id="2" res="levels/lvl2.xml" />
+</campaign>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gore speed="1.5" particle="gore/particles.xml:blood">
+  <sprite name="chunk"><texture>gore/gib.png</texture><origin>0 0</origin><frame>0 0 8 8</frame></sprite>
+</gore>

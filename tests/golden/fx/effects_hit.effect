@@ -1,0 +1,5 @@
+<effect>
+      <sprite origin="0 0" looping="false" texture="hwport/fx/spark.png" material="hwport/system/hammerwatch.mats:effect">
+        <frame time="50">0 0 16 16</frame>
+      </sprite>
+</effect>

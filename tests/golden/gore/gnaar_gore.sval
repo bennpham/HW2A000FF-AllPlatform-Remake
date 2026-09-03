@@ -1,0 +1,21 @@
+<dict>
+  <array name="death-gib">
+    <float>0</float>
+    <dict>
+      <int name="min">1</int>
+      <int name="max">1</int>
+      <float name="force">0.75</float>
+      <string name="unit">gore/particles.unit</string>
+      <string name="anim">blood</string>
+      <bool name="stay">false</bool>
+    </dict>
+    <dict>
+      <int name="min">0</int>
+      <int name="max">1</int>
+      <float name="force">0.75</float>
+      <string name="unit">hwport/gore/gnaar_gore.sval.unit</string>
+      <string name="anim">hwport_0</string>
+      <bool name="stay">false</bool>
+    </dict>
+  </array>
+</dict>

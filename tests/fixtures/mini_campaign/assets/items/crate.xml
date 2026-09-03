@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item behavior="breakable">
+  <behavior><dictionary>
+    <entry name="destroy-snd"><string>sound/enemies.xml:crate-break</string></entry>
+    <dictionary name="loot">
+      <string name="origin">0 -1</string>
+      <float name="spread">0.5</float>
+      <array name="loot"><array><int>75</int><string>items/coin.xml</string></array></array>
+    </dictionary>
+  </dictionary></behavior>
+  <sprite name="default"><texture>items/crate.png</texture><origin>0 0</origin><frame>0 0 16 16</frame></sprite>
+</item>

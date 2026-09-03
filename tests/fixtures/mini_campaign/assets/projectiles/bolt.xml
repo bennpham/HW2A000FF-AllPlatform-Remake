@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectile speed="0.5" damage="6" collision="4">
+  <behavior><dictionary><int name="ttl">1500</int></dictionary></behavior>
+  <sprite name="0"><texture>projectiles/bolt.png</texture><origin>0 0</origin><frame>0 0 8 8</frame></sprite>
+  <sprite name="1"><texture>projectiles/bolt.png</texture><origin>0 0</origin><frame>8 0 8 8</frame></sprite>
+  <sprite name="2"><texture>projectiles/bolt.png</texture><origin>0 0</origin><frame>16 0 8 8</frame></sprite>
+  <sprite name="3"><texture>projectiles/bolt.png</texture><origin>0 0</origin><frame>24 0 8 8</frame></sprite>
+  <sprite name="d0"><texture>projectiles/bolt.png</texture><origin>0 0</origin><frame>0 0 8 8</frame></sprite>
+</projectile>
