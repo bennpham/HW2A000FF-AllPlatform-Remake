@@ -247,9 +247,11 @@ git mv .github/ci.yml.example .github/workflows/ci.yml
 
 ## Credits
 
-All conversion logic is a port of [hw2a000ff](https://github.com/bennpham/hw2a000ff).
-Hammerwatch, Heroes of Hammerwatch and Hammerwatch II are the work of
-Crackshell; this tool is unaffiliated with them.
+All conversion logic is a port of `hw2a000ff` by
+[Crackshell](https://github.com/Crackshell/hw2a000ff), by way of
+[this fork](https://github.com/bennpham/hw2a000ff). Hammerwatch, Heroes of
+Hammerwatch and Hammerwatch II are Crackshell's; this port is unaffiliated
+with them.
 
 ## License
 

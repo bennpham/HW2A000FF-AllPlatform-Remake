@@ -5,9 +5,10 @@ description: Reference for converting Hammerwatch 1 (HWM) XML assets to the A000
 
 # Hammerwatch (HWM) → A000FF conversion
 
-Everything here was derived by reading the original C# tool at
-[bennpham/hw2a000ff](https://github.com/bennpham/hw2a000ff) line by line. Line
-references point into that repository.
+Everything here was derived by reading the original C# tool line by line --
+[Crackshell/hw2a000ff](https://github.com/Crackshell/hw2a000ff), read via
+[bennpham's fork](https://github.com/bennpham/hw2a000ff). Line references point
+into that source.
 
 ## The two formats
 
