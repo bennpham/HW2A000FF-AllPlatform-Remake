@@ -102,12 +102,17 @@ Stage names for `--only`/`--skip`: `actors`, `projectiles`, `doodads`,
 `tilesets`, `items`, `strings`, `speech-styles`, `fonts`, `loot`, `levels`,
 `sounds`.
 
-Two flags have no equivalent in the original:
+Three flags have no equivalent in the original:
 
 - `--require-game-install` restores its hard requirement that `Hammerwatch.exe`
   sit next to the assets folder. Off by default — see below.
 - `--line-endings crlf` reproduces the byte-for-byte output of a Windows run.
   The default is `lf`.
+- `--materials PATH` sets the materials file that sprites and tilesets point
+  at, used as given. The default, `<prefix>system/hammerwatch.mats`, is Heroes of
+  Hammerwatch's. **For the Anniversary Edition, pass `--materials
+  system/default.mats`**: AE ships only that file, and it has the same material
+  names. Config key: `[paths] materials`.
 
 ## Config file
 

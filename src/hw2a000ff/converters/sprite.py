@@ -138,7 +138,7 @@ def convert(
     writer.line(
         f'      <sprite origin="{get_origin(ctx, unit_name, origin_tag)}" '
         f'looping="{fmt_bool(looping)}" texture="{prefix}{texture}" '
-        f'material="{prefix}system/hammerwatch.mats:{material}">'
+        f'material="{ctx.settings.material(material)}">'
     )
     _write_frames(writer, sprite)
     writer.line("      </sprite>")
@@ -149,7 +149,7 @@ def convert(
         glow_origin = origin_tag.value if origin_tag is not None else "0 0"
         writer.line(
             f'      <sprite origin="{glow_origin}" looping="{fmt_bool(looping)}" '
-            f'texture="{prefix}{texture}" material="{prefix}system/hammerwatch.mats:glow">'
+            f'texture="{prefix}{texture}" material="{ctx.settings.material('glow')}">'
         )
         _write_frames(writer, glow)
         writer.line("      </sprite>")
