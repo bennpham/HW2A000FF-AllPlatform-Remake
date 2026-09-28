@@ -21,8 +21,9 @@ def test_defaults_match_the_original_form(tmp_path: Path):
 def test_toml_round_trip(tmp_path: Path, campaign: Path):
     config = tmp_path / "hw.toml"
     config.write_text(
-        f'[paths]\nsource = "{campaign / "assets"}"\noutput = "{tmp_path / "out"}"\n'
-        'prefix = "hwport/"\n\n'
+        # as_posix: a Windows path's backslashes are escape sequences in TOML strings.
+        f'[paths]\nsource = "{(campaign / "assets").as_posix()}"\noutput = "{(tmp_path / "out").as_posix()}"\n'
+        'prefix = "hwport/"\nmaterials = "system/default.mats"\n\n'
         "[convert]\nlevels = false\nsounds = false\n\n"
         "[scales]\ndamage = 2.0\n\n"
         '[strings]\nkey_prefix = "mymod."\n\n'
@@ -30,6 +31,7 @@ def test_toml_round_trip(tmp_path: Path, campaign: Path):
     )
     s = Settings.from_toml(config)
     assert s.output_prefix == "hwport/"
+    assert s.materials_path == "system/default.mats"
     assert "levels" not in s.stages and "sounds" not in s.stages
     assert "actors" in s.stages
     assert s.damage_scale == 2.0

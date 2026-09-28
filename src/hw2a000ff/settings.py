@@ -42,6 +42,11 @@ class Settings:
     levels_path: Path | None = None
     output_path: Path | None = None
     output_prefix: str = ""
+    #: Materials file every sprite and tileset points at. Empty means the
+    #: original's ``<prefix>system/hammerwatch.mats``, which Heroes of
+    #: Hammerwatch ships; the Anniversary Edition has only
+    #: ``system/default.mats`` (with the same material names). Used verbatim.
+    materials_path: str = ""
 
     # --- stages ------------------------------------------------------------
     stages: set[str] = field(default_factory=lambda: set(STAGES))
@@ -71,6 +76,11 @@ class Settings:
 
     def enabled(self, stage: str) -> bool:
         return stage in self.stages
+
+    def material(self, name: str) -> str:
+        """Reference to material ``name`` in the configured materials file."""
+        mats = self.materials_path or f"{self.output_prefix}system/hammerwatch.mats"
+        return f"{mats}:{name}"
 
     def validate(self, require_output: bool = True) -> None:
         if self.source_path is None:
@@ -144,6 +154,8 @@ class Settings:
                 setattr(settings, attr, resolve(str(paths[key])))
         if "prefix" in paths:
             settings.output_prefix = str(paths["prefix"])
+        if "materials" in paths:
+            settings.materials_path = str(paths["materials"])
 
         if "convert" in data:
             convert = data["convert"]

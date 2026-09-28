@@ -51,7 +51,7 @@ def convert(ctx: ConversionContext, xml: XmlFile, writer: Writer) -> None:
     prefix = ctx.settings.output_prefix
     writer.line(
         f'<tileset texture="{prefix}{texture}" layer="{layer}" size="{size}" '
-        f'material="{prefix}system/hammerwatch.mats:floor">'
+        f'material="{ctx.settings.material("floor")}">'
     )
 
     for tag in root.children:

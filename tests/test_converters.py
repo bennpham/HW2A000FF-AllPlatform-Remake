@@ -9,7 +9,7 @@ import pytest
 from hw2a000ff.context import ConversionContext
 from hw2a000ff.fmt import Writer
 from hw2a000ff.nimble import XmlFile
-from hw2a000ff.converters import loot, sprite, unit
+from hw2a000ff.converters import loot, sprite, tileset, unit
 from hw2a000ff.converters.level import make_multiple
 from hw2a000ff.converters.level_objects import Light, to_pixels
 from hw2a000ff.converters.level_scripts import SCRIPT_RENAMES, _remap_tristate
@@ -232,6 +232,37 @@ def test_wall_y_offset_only_applies_when_enabled(ctx):
     ctx.settings.modify_wall_collision = True
     assert sprite.unit_y_offset(ctx, "wall_v_mid") == 16
     assert sprite.unit_y_offset(ctx, "wall_v_cap_dn") == 0
+
+
+_DOODAD = """<doodad>
+  <sprite scale="16"><texture>doodads/theme_c/c.png</texture><origin>0 32</origin>
+    <frame>0 0 32 48</frame></sprite>
+</doodad>"""
+_TILESET = """<tileset>
+  <sprite><texture>tilemaps/water.png</texture><frame>0 0 16 16</frame></sprite>
+</tileset>"""
+
+
+def _tileset(ctx: ConversionContext) -> str:
+    buf = io.StringIO()
+    tileset.convert(ctx, XmlFile.from_text(_TILESET), Writer(buf))
+    return buf.getvalue()
+
+
+def test_materials_default_to_the_prefixed_hammerwatch_mats(ctx):
+    ctx.settings.output_prefix = "hwr/"
+    assert 'material="hwr/system/hammerwatch.mats:proj-wall"' in render(ctx, _DOODAD, "doodad", "c_h_16")
+    assert 'material="hwr/system/hammerwatch.mats:floor"' in _tileset(ctx)
+
+
+def test_materials_path_is_used_verbatim(ctx):
+    # The Anniversary Edition ships only system/default.mats, with the same names.
+    ctx.settings.output_prefix = "hw1/mine/"
+    ctx.settings.materials_path = "system/default.mats"
+    out = render(ctx, _DOODAD, "doodad", "c_h_16")
+    assert 'material="system/default.mats:proj-wall"' in out
+    assert 'texture="hw1/mine/doodads/theme_c/c.png"' in out
+    assert 'material="system/default.mats:floor"' in _tileset(ctx)
 
 
 # --------------------------------------------------------------------- skills

@@ -30,6 +30,9 @@ source = "Hammerwatch/assets"
 output = "out"
 # Prepended to every asset reference written into the output.
 prefix = ""
+# Materials file for sprites and tilesets. Empty means <prefix>system/hammerwatch.mats
+# (Heroes of Hammerwatch); the Anniversary Edition needs "system/default.mats".
+materials = ""
 
 [convert]
 actors = true
@@ -92,6 +95,10 @@ def build_parser() -> argparse.ArgumentParser:
         "--prefix", metavar="STR", help="prepended to every asset reference in the output"
     )
     convert.add_argument(
+        "--materials", metavar="PATH",
+        help="materials file for sprites and tilesets (Anniversary Edition: system/default.mats)",
+    )
+    convert.add_argument(
         "--strings-prefix", metavar="STR", help="key prefix for converted strings (default hwport.)"
     )
     convert.add_argument(
@@ -125,6 +132,7 @@ def build_parser() -> argparse.ArgumentParser:
     single.add_argument("input", type=Path)
     single.add_argument("output", type=Path)
     single.add_argument("--prefix", metavar="STR", default="")
+    single.add_argument("--materials", metavar="PATH", help="materials file for the unit's sprites")
     single.add_argument("--config", type=Path, metavar="FILE")
 
     doctor = subparsers.add_parser(
@@ -153,6 +161,8 @@ def _settings_from_args(args: argparse.Namespace) -> Settings:
 
     if getattr(args, "prefix", None) is not None:
         settings.output_prefix = args.prefix
+    if getattr(args, "materials", None) is not None:
+        settings.materials_path = args.materials
     if getattr(args, "strings_prefix", None) is not None:
         settings.strings_key_prefix = args.strings_prefix
     for name in ("health", "range", "damage", "speed"):
